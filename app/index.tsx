@@ -2,9 +2,9 @@ import { Link } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
 
 const IndexScreen = () => (
-    <View>
-        <Link href='/players'><Text>Fo to players screen</Text></Link>
-        <Link href='/teams'><Text>Fo to teams screen</Text></Link>
+    <View style={styles.container}>
+        <Link href='/players' style={styles.link}><Text style={styles.linkText}>Fo to players screen</Text></Link>
+        <Link href='/teams' style={styles.link}><Text style={styles.linkText}>Fo to teams screen</Text></Link>
     </View>
 );
 
