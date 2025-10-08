@@ -1,5 +1,5 @@
 import { Link } from "expo-router";
-import { Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 const IndexScreen = () => (
     <View>
@@ -7,3 +7,18 @@ const IndexScreen = () => (
         <Link href='/teams'><Text>Fo to teams screen</Text></Link>
     </View>
 );
+
+const styles = StyleSheet.create({
+    container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  link: {
+    padding: 20,
+  },
+  linkText: {
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+})
