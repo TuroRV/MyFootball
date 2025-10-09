@@ -1,7 +1,8 @@
 import Button from "@/components/Button";
 import FormInput from "@/components/FormInput";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { router } from "expo-router";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Link, router } from "expo-router";
 import { useForm } from "react-hook-form";
 import { Alert, StyleSheet, Text, View } from "react-native";
 import { z } from "zod";
@@ -21,8 +22,9 @@ const LoginScreen = () => {
     mode: "onBlur",
     reValidateMode: "onBlur",
   });
-const onSubmit = (formData: { email: string, password: string; }) => {
+const onSubmit = async (formData: { email: string, password: string; }) => {
     if (formData.email === "admin@liceolapaz.net") {
+      await AsyncStorage.setItem("userEmail", formData.email);
       router.push("/teams");
     }
     else {
@@ -49,6 +51,9 @@ const onSubmit = (formData: { email: string, password: string; }) => {
         placeholder="Enter your password"
         secureTextEntry
       />
+      <Link href="/register" style={styles.link}>
+      <Text style={styles.linkText}>Don't have an account? Register here</Text>
+      </Link>
       <Button text="Login" onPress={handleSubmit(onSubmit)} />
     </View>
   );
@@ -65,6 +70,12 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
   },
+  link: {
+    marginTop: 10,
+  },
+  linkText: {
+    color: "blue",
+  }
 });
 
 export default LoginScreen;
