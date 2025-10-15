@@ -11,3 +11,13 @@ interface Team {
     }
     logo: String;
 }
+
+type PlayerPosition = 'Goalkeeper' | 'Defender' | 'Midfielder' | 'Forward';
+
+interface Player {
+    id:number;
+    name: String;
+    position: PlayerPosition;
+    teamId: Team['id'];
+    photo:String;
+}

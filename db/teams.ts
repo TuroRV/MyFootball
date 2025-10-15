@@ -78,3 +78,5 @@ export const initialTeams: Team[] = [
     logo: "https://logos-world.net/wp-content/uploads/2020/07/PSG-Logo.png",
   },
 ];
+
+export const getTeamById = (teamId:Team['id']) => initialTeams.find(team => team.id === teamId);
