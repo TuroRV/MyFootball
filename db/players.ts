@@ -22,7 +22,7 @@ export const initialPlayers: Player[] = [
     position: 'Goalkeeper',
     teamId: 2,
     photo:
-      'https://publish-p47754-e237306.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--4d060cc8-4595-465f-9c45-c065f0f2565b/_50x650_COURTOIS_15.app.png',
+      'https://i.scdn.co/image/ab67616d0000b273cfeae645958e9248abff0710',
   },
   {
     id: 4,
