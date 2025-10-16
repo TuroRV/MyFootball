@@ -13,6 +13,7 @@ interface Team {
 }
 
 type PlayerPosition = 'Goalkeeper' | 'Defender' | 'Midfielder' | 'Forward';
+type PlayerPositionLabel = 'GK' | 'DF' | 'MF' | 'FW';
 
 interface Player {
     id:number;
