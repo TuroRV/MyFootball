@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
     padding: 10,
     minWidth: 50,
     minHeight: 40,
+    
   },
   text: {
     color: "white",
@@ -35,3 +36,5 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
 });
+
+export default FilterBadge;
