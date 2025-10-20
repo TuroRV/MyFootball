@@ -1,5 +1,5 @@
 import TeamCard from "@/components/TeamCard";
-import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { collection, deleteDoc, doc, getDocs, getFirestore } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { Alert, FlatList, StyleSheet, Text } from "react-native";
 
@@ -34,7 +34,10 @@ const db = getFirestore();
                 style: 'cancel',
             },{
                 text: 'Remove',
-                onPress: () => setTeams(previousTeams => previousTeams.filter(t => t.id != team.id)),
+                onPress: () => {
+                  deleteDoc(doc(db,'teams',team.id))
+                  loadTeams();
+                }
             }
         ])
     }

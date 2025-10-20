@@ -1,15 +1,15 @@
 interface Team {
     id: string;
-    name: String;
+    name: string;
     location: {
-        city: String;
-        country: String;
+        city: string;
+        country: string;
     }
     stadium: {
-        name: String;
+        name: string;
         capacity: number;
     }
-    logo?: String;
+    logo?: string;
 }
 
 type TeamSnapshotData = {
@@ -37,8 +37,8 @@ type PlayerPositionLabel = 'GK' | 'DF' | 'MF' | 'FW';
 
 interface Player {
     id:string;
-    name: String;
+    name: string;
     position: PlayerPosition;
     teamId?: Team['id'];
-    photo?:String;
+    photo?:string;
 }
