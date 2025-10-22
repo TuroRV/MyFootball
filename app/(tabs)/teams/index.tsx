@@ -1,4 +1,5 @@
 import TeamCard from "@/components/TeamCard";
+import { router } from "expo-router";
 import { collection, deleteDoc, doc, getDocs, getFirestore } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { Alert, FlatList, StyleSheet, Text } from "react-native";
@@ -26,7 +27,12 @@ const db = getFirestore();
 
   useEffect(loadTeams, []);
 
-    const edit = (team: Team) => console.log(`Editing ${team.name} (id: ${team.id})`);
+    const edit = (team: Team) => router.push({
+              pathname: "./teams/form",
+              params: {
+                id: team.id,
+              },
+            });
 
     const remove = (team: Team) => {
         Alert.alert('Remove Team',`Are you sure you want to remove ${team.name}?`,[
